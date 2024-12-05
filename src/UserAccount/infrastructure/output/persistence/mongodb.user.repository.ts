@@ -67,22 +67,13 @@ export class MongodbUserRepository implements UserRepository {
   }
 
   async loadByEmail(email: string): Promise<User | null> {
-    try {
-      this.logger.log(`Loading user by email: ${email}`);
+    const user = await this.userModel.findOne({ email });
 
-      const user = await this.userModel.findOne({ email });
-
-      if (user) {
-        this.logger.debug(`User found for email: ${email}`);
-        return this.userMapper.toDomain(user);
-      }
-
-      this.logger.log(`No user found for email: ${email}`);
-      return null;
-    } catch (error) {
-      this.logger.error(`Error loading user by email: ${error}`);
-      throw error;
+    if (user) {
+      return this.userMapper.toDomain(user);
     }
+
+    return null;
   }
 
   private async createUser(
