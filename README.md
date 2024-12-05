@@ -1,6 +1,54 @@
-# modular
+# Notes Management
+
+## Domain: Notes  
+
+#### Description  
+
+**Definition**:  
+A domain is a sphere of knowledge, influence, or activity. It represents the subject area to which the user applies the program. In the context of this project, the domain focuses on **Notes Management**, inspired by personal productivity and knowledge organization systems.  
+
+---
+
+#### Notes Management  
+
+The core business entities are **User**, **Note**, and **Notebook**. The following outlines the primary domain rules and relationships:  
+
+- **Users**:  
+  - A User can create multiple Notebooks and Notes.  
+  - Each User has a unique identity and manages their own content.  
+
+- **Notebooks**:  
+  - Notebooks are containers for organizing Notes.  
+  - A Notebook can contain multiple Notes.  
+
+- **Notes**:  
+  - A Note is the smallest unit of the system, representing a single piece of information.  
+  - Notes can have metadata such as **title**, **content**, **tags**, **created date**, and **last modified date**.  
+  - Notes can belong to one or more Notebooks.  
+  - Users can archive Notes, marking them as inactive but not deleted.  
+
+- **Tagging**:  
+  - Notes can be tagged for better organization and retrieval.  
+  - Tags are unique per User and can be reused across Notes.  
 
 
+#### Additional Features  
+
+- **Search**:  
+  - Users can search Notes by title, content, tags, or metadata.  
+
+- **Reminders**:  
+  - Notes can have reminders associated with them, notifying Users of specific tasks or deadlines.  
+
+
+#### Users  
+
+- **Permissions**:  
+  - Each User is only can manage notes created by herself.
+
+- **Registration and Authentication**:  
+  - User registration requires email.  
+  - Authentication is managed through secure tokens (e.g., JWT).  
 
 ## Continuous Integration with GitHub Actions
 
