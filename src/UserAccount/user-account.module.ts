@@ -15,6 +15,7 @@ import { BcryptHash } from './infrastructure/output/bcrypt.hash';
 import { Token } from './application/ports/token.port';
 import { JwtToken } from './infrastructure/output/jwt.token';
 import { JwtModule } from '@nestjs/jwt';
+import { CqrsModule } from '@nestjs/cqrs';
 
 const commands = [RegisterUserUseCase, LoginUserUseCase];
 
@@ -28,6 +29,7 @@ const mapper = [UserMapper];
 
 @Module({
   imports: [
+    CqrsModule,
     MongooseModule.forFeature([
       { name: UserCollectionName, schema: UserPersistenceSchema },
     ]),
