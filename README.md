@@ -1,4 +1,4 @@
-# Notes Management
+# Notes Management 📝
 
 ## Domain: Notes  
 
