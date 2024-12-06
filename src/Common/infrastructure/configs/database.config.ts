@@ -9,3 +9,5 @@ export const databaseConfig = {
   password: get('DB_PASSWORD').required().asString(),
   database: get('DB_NAME').required().asString(),
 };
+
+export const mongodbString = `mongodb://${databaseConfig.username}:${databaseConfig.password}@${databaseConfig.host}:${databaseConfig.port}/${databaseConfig.database}`;
