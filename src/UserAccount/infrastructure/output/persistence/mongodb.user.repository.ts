@@ -95,7 +95,7 @@ export class MongodbUserRepository implements UserRepository {
   ): Promise<void> {
     try {
       const result = await this.userModel.updateOne(
-        { _id: userPersistenceModel.id },
+        { id: userPersistenceModel.id },
         userPersistenceModel,
         { session },
       );
