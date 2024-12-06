@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import Redis, { RedisOptions } from 'ioredis';
 
-import { Cache } from '../../application/ports/cache.port';
+import { Cache } from '../../../application/ports/cache.port';
 import { redisConfig } from '@common/infrastructure/configs/redis.config';
 
 @Injectable()

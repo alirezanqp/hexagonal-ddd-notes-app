@@ -6,19 +6,19 @@ import { CreateNotebookUseCase } from './NoteBook/application/use-cases/commands
 import { RenameNotebookUseCase } from './NoteBook/application/use-cases/commands/rename-notebook/rename-notebook.usecase';
 import { GetNoteByIdUseCase } from './Note/application/use-cases/queries/get-by-id/get-by-id.usecase';
 import { Cache } from './Note/application/ports/cache.port';
-import { RedisCache } from './Note/infrastructure/cache/redis.cache';
+import { RedisCache } from './Note/infrastructure/output/cache/redis.cache';
 import { CqrsModule } from '@nestjs/cqrs';
 import { AddNoteToNotebookUseCase } from './NoteBook/application/use-cases/commands/add-note-to-notebook/add-note-to-notebook.usecase';
 import { NoteRepository } from './Note/application/ports/note.repository';
-import { MongodbNoteRepository } from './Note/infrastructure/persistence/mongodb.note.repository';
+import { MongodbNoteRepository } from './Note/infrastructure/output/persistence/mongodb.note.repository';
 import { NotebookRepository } from './NoteBook/application/ports/notebook.repository';
 import { MongodbNotebookRepository } from './NoteBook/infrastructure/persistence/mongodb.notebook.repository';
-import { NoteMapper } from './Note/infrastructure/persistence/mapper/note.mapper';
+import { NoteMapper } from './Note/infrastructure/output/persistence/mapper/note.mapper';
 import { NotebookMapper } from './NoteBook/infrastructure/persistence/mapper/notebook.mapper';
 import {
   NoteCollectionName,
   NotePersistenceSchema,
-} from './Note/infrastructure/persistence/model/note.persistence.model';
+} from './Note/infrastructure/output/persistence/model/note.persistence.model';
 import {
   NotebookCollectionName,
   NotebookPersistenceSchema,

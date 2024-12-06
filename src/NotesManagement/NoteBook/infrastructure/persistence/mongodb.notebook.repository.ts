@@ -109,7 +109,7 @@ export class MongodbNotebookRepository implements NotebookRepository {
   ): Promise<void> {
     try {
       const result = await this.notebookModel.updateOne(
-        { _id: notebookPersistenceModel.id },
+        { id: notebookPersistenceModel.id },
         notebookPersistenceModel,
         { session },
       );

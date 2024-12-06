@@ -9,11 +9,11 @@ import {
   NoteMovedToNotebook,
 } from 'src/NotesManagement/Note/domain/events/note.events';
 import { Note } from 'src/NotesManagement/Note/domain/note';
-import { NoteMapper } from 'src/NotesManagement/Note/infrastructure/persistence/mapper/note.mapper';
+import { NoteMapper } from 'src/NotesManagement/Note/infrastructure/output/persistence/mapper/note.mapper';
 import {
   NoteCollectionName,
   NotePersistenceModel,
-} from 'src/NotesManagement/Note/infrastructure/persistence/model/note.persistence.model';
+} from 'src/NotesManagement/Note/infrastructure/output/persistence/model/note.persistence.model';
 
 @Injectable()
 export class MongodbNoteRepository {
