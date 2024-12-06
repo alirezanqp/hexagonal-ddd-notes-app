@@ -30,6 +30,8 @@
     "@nestjs/swagger": "^8.1.0",
     "@types/bcrypt": "^5.0.2",
     "bcrypt": "^5.1.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
     "dotenv": "^16.4.7",
     "env-var": "^7.5.0",
     "ioredis": "^5.4.1",
