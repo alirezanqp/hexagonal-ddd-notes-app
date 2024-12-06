@@ -1,6 +1,6 @@
 # Notes Management 📝
 
-## Domain: Notes  
+### Domain: Notes  
 
 #### Description  
 
@@ -48,11 +48,36 @@ The core business entities are **User**, **Note**, and **Notebook**. The followi
 
 - **Registration and Authentication**:  
   - User registration requires email.  
-  - Authentication is managed through secure tokens (e.g., JWT).  
+  - Authentication is managed through secure tokens (e.g., JWT).
+ 
+
+# Tactical
+
+
+### Architectural Overview
+
+#### Architectural Styles
+
+- Architectural Pattern: Hexagonal (Ports and Adapters) Architecture
+- Design Approach: Domain-Driven Design (DDD)
+- Structural Pattern: Modular Monolith
+  
+![image](https://github.com/user-attachments/assets/6866a424-a6f3-49ae-9dc5-1f557ad4f6a5)
+
+## Testing Approach
+
+### Unit tests for domain logic:
+Unit testing domain logic ensures that the core business rules and behaviors of our Notes Management system are correct, reliable, and maintain their intended functionality.
 
 ## Continuous Integration with GitHub Actions
 
 ![CI](./docs/ci.jpg)
+
+Automated workflows managed through GitHub Actions:
+- Build verification
+- Lint checks
+- Unit testing
+- Code quality enforcement
 
 This project uses GitHub Actions to automate continuous integration tasks, including building the application, running lint checks, and executing unit tests. The workflow ensures code quality and stability with every commit and pull request. refer to the [Continuous Integration Guidelines](./docs/continuous-integration.md).
 
