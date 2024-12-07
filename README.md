@@ -112,7 +112,9 @@ npm install
 
 Set up environment variables:
 
-Copy .env.example to .env
+```bash
+cp .env.example to .env
+```
 
 Run the application:
 
