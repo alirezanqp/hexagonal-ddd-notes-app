@@ -23,11 +23,11 @@ export class GetNoteByIdUseCase implements IQueryHandler<GetNoteByIdQuery> {
   ) {}
 
   async execute(query: GetNoteByIdQuery): Promise<Note> {
-    const { noteId, userId, ...metadata } = query;
+    const { noteId, userId } = query;
 
     this.logger.log(`
       New GetNoteByIdQuery executed for user: ${userId}
-      query: ${JSON.stringify(metadata)}
+      query: ${JSON.stringify(query)}
     `);
 
     // Try to get from cache first

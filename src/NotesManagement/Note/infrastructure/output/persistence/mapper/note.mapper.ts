@@ -22,19 +22,17 @@ export class NoteMapper {
   }
 
   toPersistenceModel(note: Note): NotePersistenceModel {
-    const notePersistenceModel = new NotePersistenceModel();
-
-    notePersistenceModel.id = note.id;
-    notePersistenceModel.title = note.title;
-    notePersistenceModel.content = note.content;
-    notePersistenceModel.userId = note.userId;
-    notePersistenceModel.notebookId = note.notebookId;
-    notePersistenceModel.tags = note.tags;
-    notePersistenceModel.isArchived = note.isArchived;
-    notePersistenceModel.createdAt = note.createdAt;
-    notePersistenceModel.updatedAt = note.updatedAt;
-    notePersistenceModel.archivedAt = note.archivedAt;
-
-    return notePersistenceModel;
+    return {
+      id: note.id,
+      title: note.title,
+      content: note.content,
+      userId: note.userId,
+      notebookId: note.notebookId,
+      tags: note.tags,
+      isArchived: note.isArchived,
+      createdAt: note.createdAt,
+      updatedAt: note.updatedAt,
+      archivedAt: note.archivedAt,
+    };
   }
 }

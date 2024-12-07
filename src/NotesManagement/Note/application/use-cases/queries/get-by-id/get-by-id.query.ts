@@ -1,8 +1,8 @@
 export class GetNoteByIdQuery {
-  readonly noteId: string;
-  readonly userId: string;
+  noteId: string;
+  userId: string;
 
-  constructor(props: GetNoteByIdQuery) {
+  constructor(props: { noteId: string; userId: string }) {
     this.noteId = props.noteId;
     this.userId = props.userId;
   }

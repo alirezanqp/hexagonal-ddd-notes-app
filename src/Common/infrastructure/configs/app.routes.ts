@@ -16,9 +16,9 @@ export const routesV1 = {
   notes: {
     root: notesRoot,
     create: `${notesRoot}/create`,
-    update: `${notesRoot}/update`,
-    archive: `${notesRoot}/archive`,
-    getById: `${notesRoot}/:id`,
+    update: `${notesRoot}/update/:noteId`,
+    archive: `${notesRoot}/archive/:noteId`,
+    getById: `${notesRoot}/:noteId`,
   },
   notebooks: {
     root: notebooksRoot,

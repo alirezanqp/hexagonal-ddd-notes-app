@@ -26,6 +26,7 @@ import { TokenGuard } from '@common/infrastructure/guards/jwt.guard';
 import { UserData } from '@common/infrastructure/decorators/decorator';
 import { GetNoteByIdQuery } from '../../application/use-cases/queries/get-by-id/get-by-id.query';
 import { NoteResponseDto } from './dto/note.response.dto';
+import { Note } from '../../domain/note';
 
 @ApiBearerAuth()
 @UseGuards(TokenGuard)
@@ -40,8 +41,22 @@ export class NoteHttpController {
   @Get(routesV1.notes.getById)
   @ApiOperation({ summary: 'Get a note by id' })
   @ApiOkResponse({ type: NoteResponseDto })
-  getById(@Param('noteId') noteId: string, @UserData('id') userId: string) {
-    return this.queryBus.execute(new GetNoteByIdQuery({ noteId, userId }));
+  async getById(
+    @Param('noteId') noteId: string,
+    @UserData('id') userId: string,
+  ): Promise<NoteResponseDto> {
+    const note: Note = await this.queryBus.execute(
+      new GetNoteByIdQuery({ noteId, userId }),
+    );
+
+    return {
+      id: note.id,
+      title: note.title,
+      content: note.content,
+      tags: note.tags,
+      isArchived: note.isArchived,
+      createdAt: note.createdAt,
+    };
   }
 
   @Post(routesV1.notes.create)

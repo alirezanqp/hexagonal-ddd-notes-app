@@ -26,6 +26,8 @@ export class MongodbNoteRepository {
   ) {}
 
   async save(note: Note): Promise<void> {
+    console.log(note);
+
     const session = await this.noteModel.startSession();
 
     try {
@@ -74,7 +76,7 @@ export class MongodbNoteRepository {
     session: ClientSession,
   ): Promise<void> {
     const notePersistenceModel = this.noteMapper.toPersistenceModel(
-      event.data['note'],
+      event.data as Note,
     );
 
     await this.noteModel.create([notePersistenceModel], { session });
@@ -133,6 +135,7 @@ export class MongodbNoteRepository {
   }
 
   async loadById(noteId: string): Promise<Note | null> {
+    console.log('ssssss', noteId);
     const note = await this.noteModel.findOne({ id: noteId });
 
     return note ? this.noteMapper.toDomain(note) : null;

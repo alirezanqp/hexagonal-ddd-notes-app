@@ -3,12 +3,11 @@ import type {
   ExecutionContext,
   NestInterceptor,
 } from '@nestjs/common';
-import { Logger } from '@nestjs/common';
+import { BadRequestException, Logger } from '@nestjs/common';
 import type { Observable } from 'rxjs';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { RequestContextService } from '../request-context/app-request.context';
-import { ValidationError } from 'class-validator';
 
 export class ExceptionInterceptor implements NestInterceptor {
   private readonly logger: Logger = new Logger(ExceptionInterceptor.name);
@@ -27,9 +26,11 @@ export class ExceptionInterceptor implements NestInterceptor {
             typeof err?.response?.error === 'string' &&
             err.status === 400;
 
-          // Transforming class-validator errors to a different format
           if (isClassValidatorError) {
-            err = new ValidationError();
+            err = new BadRequestException({
+              message: err.response.message,
+              error: err.response.error,
+            });
           }
         }
 
