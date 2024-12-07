@@ -17,12 +17,14 @@ export const routesV1 = {
     root: notesRoot,
     create: `${notesRoot}/create`,
     update: `${notesRoot}/update`,
+    archive: `${notesRoot}/archive`,
     getById: `${notesRoot}/:id`,
   },
   notebooks: {
     root: notebooksRoot,
     create: `${notebooksRoot}/create`,
     rename: `${notebooksRoot}/rename`,
+    addNote: `${notebooksRoot}/:id/add-note`,
     getById: `${notebooksRoot}/:id`,
   },
 };

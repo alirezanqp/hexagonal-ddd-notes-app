@@ -7,14 +7,14 @@ import {
   NotebookPersistenceModel,
 } from './model/notebook.persistence.model';
 import { NotebookMapper } from './mapper/notebook.mapper';
-import { NotebookRepository } from '../../application/ports/notebook.repository';
+import { NotebookRepository } from 'src/NotesManagement/NoteBook/application/ports/notebook.repository';
 import {
   NotebookCreated,
   NotebookRenamed,
   NoteAdded,
   NoteRemoved,
-} from '../../domain/events/notebook.events';
-import { Notebook } from '../../domain/notebook';
+} from 'src/NotesManagement/NoteBook/domain/events/notebook.events';
+import { Notebook } from 'src/NotesManagement/NoteBook/domain/notebook';
 
 @Injectable()
 export class MongodbNotebookRepository implements NotebookRepository {

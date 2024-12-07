@@ -12,18 +12,21 @@ import { AddNoteToNotebookUseCase } from './NoteBook/application/use-cases/comma
 import { NoteRepository } from './Note/application/ports/note.repository';
 import { MongodbNoteRepository } from './Note/infrastructure/output/persistence/mongodb.note.repository';
 import { NotebookRepository } from './NoteBook/application/ports/notebook.repository';
-import { MongodbNotebookRepository } from './NoteBook/infrastructure/persistence/mongodb.notebook.repository';
 import { NoteMapper } from './Note/infrastructure/output/persistence/mapper/note.mapper';
-import { NotebookMapper } from './NoteBook/infrastructure/persistence/mapper/notebook.mapper';
 import {
   NoteCollectionName,
   NotePersistenceSchema,
 } from './Note/infrastructure/output/persistence/model/note.persistence.model';
+
+import { MongooseModule } from '@nestjs/mongoose';
+import { NotebookMapper } from './NoteBook/infrastructure/output/persistence/mapper/notebook.mapper';
 import {
   NotebookCollectionName,
   NotebookPersistenceSchema,
-} from './NoteBook/infrastructure/persistence/model/notebook.persistence.model';
-import { MongooseModule } from '@nestjs/mongoose';
+} from './NoteBook/infrastructure/output/persistence/model/notebook.persistence.model';
+import { MongodbNotebookRepository } from './NoteBook/infrastructure/output/persistence/mongodb.notebook.repository';
+import { NoteHttpController } from './Note/infrastructure/input/note.http.controller';
+import { NotebookHttpController } from './NoteBook/infrastructure/input/http/notebook.http.controller';
 
 const commands = [
   // note
@@ -55,6 +58,7 @@ const mappers = [NoteMapper, NotebookMapper];
       { name: NotebookCollectionName, schema: NotebookPersistenceSchema },
     ]),
   ],
+  controllers: [NoteHttpController, NotebookHttpController],
   providers: [...commands, ...queries, ...infrastructure, ...mappers],
 })
 export class NotesManagementModule {}
