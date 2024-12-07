@@ -37,9 +37,6 @@ The core business entities are **User**, **Note**, and **Notebook**. The followi
 - **Search**:  
   - Users can search Notes by title, content, tags, or metadata.  
 
-- **Reminders**:  
-  - Notes can have reminders associated with them, notifying Users of specific tasks or deadlines.  
-
 
 #### Users  
 
@@ -63,6 +60,10 @@ The core business entities are **User**, **Note**, and **Notebook**. The followi
 - Structural Pattern: Modular Monolith
   
 ![image](https://github.com/user-attachments/assets/6866a424-a6f3-49ae-9dc5-1f557ad4f6a5)
+
+
+## Caching Strategy
+The project implements Redis caching using the Aside strategy for note retrieval
 
 ## Testing Approach
 
@@ -88,3 +89,44 @@ This project uses GitHub Actions to automate continuous integration tasks, inclu
 
 For detailed guidelines on our Git workflow, including branching strategies and pull request conventions, refer to the [Git Workflow Guidelines](./docs/development-process-and-branching-strategy.md).
 
+## HTTP API Documentation
+Swagger UI
+
+The project uses Swagger for API documentation and interactive API testing.
+
+![swagger ui](./docs//swagger-ui.png)
+
+Accessing Swagger Documentation:
+
+- Local Development: http://localhost:port/docs
+- Swagger JSON: http://localhost:port/docs-json
+
+## Running the Project
+Local Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Set up environment variables:
+
+Copy .env.example to .env
+
+Run the application:
+
+```bash
+# Development mode
+npm run start:dev
+
+# Production mode
+npm run start:prod
+```
+
+## Docker Compose Deployment
+
+```bash
+# Development
+docker compose up --build
+```
