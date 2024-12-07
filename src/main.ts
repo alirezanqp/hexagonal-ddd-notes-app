@@ -29,6 +29,6 @@ async function bootstrap() {
     setupSwagger(app);
   }
 
-  await app.listen(appConfig.port);
+  await app.listen(appConfig.port, appConfig.host);
 }
 bootstrap();
