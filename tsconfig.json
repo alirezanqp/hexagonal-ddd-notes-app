@@ -21,7 +21,8 @@
     "paths": {
       "@common/*": [
         "src/Common/*"
-      ]
+      ],
+      "@configs/*": ["src/Common/infrastructure/configs/*"],
     }
   }
 }
