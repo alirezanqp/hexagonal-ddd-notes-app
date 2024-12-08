@@ -1,0 +1,78 @@
+# Dependency directories
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build directories
+dist
+build
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+*.env
+
+# Version control
+.git
+.gitignore
+
+# IDE and editor directories
+.idea
+.vscode
+*.swp
+*.swo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage
+.nyc_output
+
+# Temporary files
+.tmp
+.temp
+
+# Mac files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Backup files
+*.bak
+*.gho
+*.ori
+*.orig
+*.tmp
+
+# Miscellaneous
+.docker
+.dockerignore
+Dockerfile
+docker-compose*.yml
+
+# Cache and temp files
+.cache
+.eslintcache
+.npm
+.pnpm-store
+.turbo
+
+# Test related
+jest.config.js
+*.spec.ts
+*.e2e-spec.ts
+test
+e2e
