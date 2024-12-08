@@ -32,12 +32,6 @@ The core business entities are **User**, **Note**, and **Notebook**. The followi
   - Tags are unique per User and can be reused across Notes.  
 
 
-#### Additional Features  
-
-- **Search**:  
-  - Users can search Notes by title, content, tags, or metadata.  
-
-
 #### Users  
 
 - **Permissions**:  
