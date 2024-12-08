@@ -9,6 +9,7 @@ import { NotesManagementModule } from './NotesManagement/notes-management.module
 import { CqrsModule } from '@nestjs/cqrs';
 import { ExceptionInterceptor } from '@common/infrastructure/interceptors/exception.interceptor';
 import { AllExceptionsFilter } from '@common/infrastructure/exception-filters/filters';
+import { mongodbString } from '@common/infrastructure/configs/database.config';
 
 const interceptors: Provider[] = [
   { provide: APP_INTERCEPTOR, useClass: ContextInterceptor },
@@ -18,9 +19,7 @@ const interceptors: Provider[] = [
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'mongodb://root:2dv6WbOvEdg8KVMTvO1msjb4@monte-rosa.liara.cloud:33688/my-app?authSource=admin&replicaSet=rs0&directConnection=true',
-    ),
+    MongooseModule.forRoot(mongodbString),
     CqrsModule,
     RequestContextModule,
     NestjsEventEmitterModule,

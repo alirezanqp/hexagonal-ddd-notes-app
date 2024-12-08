@@ -59,10 +59,14 @@ The core business entities are **User**, **Note**, and **Notebook**. The followi
 ## Caching Strategy
 The project implements Redis caching using the Aside strategy for note retrieval
 
+example: [queries/get-note-by-id.usecase.ts](./src/NotesManagement/Note/application/use-cases/queries/get-by-id/get-by-id.usecase.ts)
+
 ## Testing Approach
 
 ### Unit tests for domain logic:
 Unit testing domain logic ensures that the core business rules and behaviors of our Notes Management system are correct, reliable, and maintain their intended functionality.
+
+example: [domain/user.spec.ts](./src/UserAccount/domain/user.spec.ts)
 
 ## Continuous Integration with GitHub Actions
 
