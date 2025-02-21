@@ -135,7 +135,6 @@ export class MongodbNoteRepository {
   }
 
   async loadById(noteId: string): Promise<Note | null> {
-    console.log('ssssss', noteId);
     const note = await this.noteModel.findOne({ id: noteId });
 
     return note ? this.noteMapper.toDomain(note) : null;
